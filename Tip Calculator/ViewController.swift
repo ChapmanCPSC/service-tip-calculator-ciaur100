@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: "endEditing:"))
+        
         formatter.numberStyle = .CurrencyStyle
         formatter.maximumFractionDigits = 2
         
@@ -90,6 +92,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    // Turns out that NSNumberFormatter only has Floating point precision.
+    // So if you go super huge, it starts to die around 16 decimals
     func formatCurrency(string: String) {
         if let doubleFromString = Double(string){
             priceTextField.text = formatter.stringFromNumber(doubleFromString/100)
