@@ -53,14 +53,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             fatalError("Will never happen. Thanks dickhead.")
         }
         
-        calculateTip(Float(tipPercent))
+        calculateTip(Double(tipPercent))
     }
     
-    func calculateTip(percent: Float){
+    func calculateTip(percent: Double){
         if let text = priceTextField.text, subtotal = formatter.numberFromString(text){
-            let tipAmount = Float(subtotal) * percent
+            let tipAmount = Double(subtotal) * percent
             tipLabel.text = formatter.stringFromNumber(tipAmount)
-            grandTotalLabel.text = formatter.stringFromNumber(tipAmount + Float(subtotal))
+            grandTotalLabel.text = formatter.stringFromNumber(tipAmount + Double(subtotal))
             
         }
         
