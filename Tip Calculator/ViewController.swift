@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let selectedIndex = sender.selectedSegmentIndex
         var tipPercent = 0.0
         
+        // Fancy range syntax doesn't save much time...
         switch selectedIndex{
         case 0,1,2:
             tipPercent = 0.1
