@@ -31,21 +31,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func textFieldValueChanged(sender: UITextField) {
-//        if let text = sender.text{
-//            let replaced = text.stringByReplacingOccurrencesOfString("$", withString: "").stringByReplacingOccurrencesOfString(",",withString: "")
-//            if let price = Float(replaced){
-//                sender.text = formatter.stringFromNumber(price)
-//            }
-//        }
-        ratingControl.sendActionsForControlEvents(.ValueChanged)
-        
-    }
+
     
     @IBAction func ratingChanged(sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         var tipPercent = 0.0
-        print("uh k")
         
         switch selectedIndex{
         case 0,1,2:
